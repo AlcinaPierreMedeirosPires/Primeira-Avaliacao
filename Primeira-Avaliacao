@@ -1,1 +1,54 @@
+/*
+Programa: Orgaização de 3 números em ordem decrescente
 
+Nome: Pierre Medeiros Pires - N°:29
+Turma:2B
+
+Descrição:
+Para o programa executar a função de organizar 3 números aleatórios em ordem decrescente, explicarei alguns passos:
+
+Primeiramente, existem 3 opções para o "numero1", estas são: maior(primeiro), menor(fim) e a exceção meio.
+
+Após criar as 3 possibilidades principais, dentro de cada uma das principais, existem mais duas secundárias, que determinam a ordem de "numero2" e "número3", entre si, usando a lógica, determinando as últimas duas posições.
+
+Porfim, é exibido uma mensagem com os 3 números em ordem decrescente.
+
+(detalhe no uso de "parseInt" para converter de alfanuméricos para números inteiros)
+*/
+
+
+
+
+
+
+
+console.log("Este programa deve receber 3 números e mostrar-los em ordem numérica decrescente");
+
+numero1 = parseInt(prompt ("Digite o primeiro número:"));
+numero2 = parseInt(prompt ("Digite o segundo número:"));
+numero3 = parseInt(prompt ("Digite o terceiro número:"));
+
+
+/* caso do 1 maior */
+if (numero1 > numero2 && numero1 > numero3) {primaior = numero1;}  
+/* resolução entre 2 e 3 */
+if (numero2 > numero3) {medio = numero2; fimenor = numero3;}
+else (numero2 < numero3) {medio = numero3; fimenor = numero2;}
+
+
+
+/* caso do 1 menor */
+if (numero1 < numero2 && numero1 < numero3) {fimenor = numero1;} 
+/* resolução entre 2 e 3 */
+if (numero2 > numero3) {primaior = numero2; meio = numero3;}
+else (numero2 < numero3) {primaior = numero3; meio = numero2;}
+
+
+
+/* caso do 1 no médio */
+else {medio = numero1;}
+/* resolução entre 2 e 3 */
+if (numero2 > numero3) {primaior = numero2; fimenor = numero3;}
+else (numero2 < numero3) {primaior = numero3; fimenor = numero2;}
+
+console.log("A ordem dos números, em ordem decrescente, é: primaior+ "," +meio+ "," +fimenor);
